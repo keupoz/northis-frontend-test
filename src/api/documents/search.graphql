@@ -1,0 +1,24 @@
+query SearchRepositories($query: String!, $pageSize: Int = 10, $cursor: String) {
+  search(query: $query, type: REPOSITORY, first: $pageSize, after: $cursor) {
+    repositoryCount
+    nodes {
+      ...SearchRepositoriesItem
+    }
+    pageInfo {
+      endCursor
+    }
+  }
+}
+
+fragment SearchRepositoriesItem on Repository {
+  __typename
+  id
+  name
+  primaryLanguage {
+    name
+  }
+  forkCount
+  stargazerCount
+  pushedAt
+  createdAt
+}
