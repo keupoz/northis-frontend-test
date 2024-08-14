@@ -38,3 +38,5 @@
 - Сборщик Vite
 - GraphQL Codegen
 - TypeScript, ESLint (конфиг antfu)
+
+> Для успешной сборки и работы приложения требуется [GitHub-токен](https://github.com/settings/tokens?type=beta) с минимальными правами доступа, который нужно добавить в файл `.env` или внедрить иным способом в окружение
