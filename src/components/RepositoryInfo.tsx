@@ -26,7 +26,7 @@ export function RepositoryInfo({ id }: RepositoryInfoProps) {
     return null;
   }
 
-  const { name, primaryLanguage, stargazerCount, repositoryTopics, licenseInfo } = data.node;
+  const { name, primaryLanguage, stargazerCount, repositoryTopics, description, licenseInfo } = data.node;
 
   return (
     <Stack gap={3}>
@@ -53,6 +53,8 @@ export function RepositoryInfo({ id }: RepositoryInfoProps) {
             )
           : null}
       </Stack>
+
+      {description ? <Typography variant="body2">{description}</Typography> : null}
 
       {licenseInfo?.name ? <Typography variant="body2">{licenseInfo.name}</Typography> : null}
     </Stack>

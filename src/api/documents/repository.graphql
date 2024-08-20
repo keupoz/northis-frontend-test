@@ -19,6 +19,7 @@ fragment RepositoryItem on Repository {
       }
     }
   }
+  description
   licenseInfo {
     name
   }
