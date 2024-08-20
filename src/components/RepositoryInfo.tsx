@@ -1,5 +1,5 @@
-import { Star } from '@mui/icons-material';
-import { Chip, Stack, Typography } from '@mui/material';
+import { OpenInNew, Star } from '@mui/icons-material';
+import { Chip, Link, Stack, Typography } from '@mui/material';
 import { useGetRepositoryByIdQuery } from '@/api/generated/githubApi';
 import { ErrorMessage } from './ErrorMessage';
 import { Loader } from './Loader';
@@ -26,12 +26,22 @@ export function RepositoryInfo({ id }: RepositoryInfoProps) {
     return null;
   }
 
-  const { name, primaryLanguage, stargazerCount, repositoryTopics, description, licenseInfo } = data.node;
+  const { url, name, primaryLanguage, stargazerCount, repositoryTopics, description, licenseInfo } = data.node;
 
   return (
     <Stack gap={3}>
       <Stack gap={2}>
-        <Typography variant="h4">{name}</Typography>
+        <Stack gap={1} direction="row" alignItems="center">
+          <Typography variant="h4">{name}</Typography>
+
+          {typeof url === 'string'
+            ? (
+                <Link href={url} variant="h4" title="Open on GitHub" target="_blank" rel="noopener">
+                  <OpenInNew />
+                </Link>
+              )
+            : null}
+        </Stack>
 
         <Stack direction="row" justifyContent="space-between" alignItems="center">
           {primaryLanguage?.name ? <Chip label={primaryLanguage.name} color="secondary" /> : null}
