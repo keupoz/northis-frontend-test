@@ -18,7 +18,7 @@ export function AppHeader() {
   }
 
   return (
-    <AppBar position="static" elevation={0}>
+    <AppBar position="static" elevation={0} color="secondary">
       <Toolbar className={classes.AppHeader_Toolbar}>
         <Stack
           component="form"
@@ -32,7 +32,7 @@ export function AppHeader() {
             placeholder="Введите поисковый запрос"
           />
 
-          <Button variant="contained" color="secondary" size="large">Искать</Button>
+          <Button variant="contained" size="large">Искать</Button>
         </Stack>
       </Toolbar>
     </AppBar>

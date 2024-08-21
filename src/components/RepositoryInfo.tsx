@@ -36,7 +36,7 @@ export function RepositoryInfo({ id }: RepositoryInfoProps) {
 
           {typeof url === 'string'
             ? (
-                <Link href={url} variant="h4" title="Open on GitHub" target="_blank" rel="noopener">
+                <Link href={url} variant="h4" color="secondary" title="Open on GitHub" target="_blank" rel="noopener">
                   <OpenInNew />
                 </Link>
               )
@@ -44,7 +44,7 @@ export function RepositoryInfo({ id }: RepositoryInfoProps) {
         </Stack>
 
         <Stack direction="row" justifyContent="space-between" alignItems="center">
-          {primaryLanguage?.name ? <Chip label={primaryLanguage.name} color="secondary" /> : null}
+          {primaryLanguage?.name ? <Chip label={primaryLanguage.name} color="primary" /> : null}
 
           <Stack direction="row" gap={1} alignItems="center">
             <Star htmlColor="#FFB400" />

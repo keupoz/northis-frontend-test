@@ -11,10 +11,10 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: cyan[800],
+      main: blue[500],
     },
     secondary: {
-      main: blue[500],
+      main: cyan[800],
     },
   },
 });
